@@ -1,0 +1,89 @@
+.container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  max-width: 70%;
+  margin: auto;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #0073e6;
+  margin-bottom: 16px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 1em;
+}
+
+.form-group {
+  margin-top: 20px;
+  background-color: #e8edf2;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+label {
+  font-weight: 600;
+}
+
+.required {
+  color: red;
+}
+
+select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.card-grid-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.start-text {
+  font-size: 14px;
+  color: #333;
+  max-width: 70%;
+}
+
+.program-count {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}

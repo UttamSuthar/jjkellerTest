@@ -1,0 +1,46 @@
+<div class="container">
+  <nav class="breadcrumb">
+    <a href="#">Dashboard</a> / <span>Environmental Programs</span>
+  </nav>
+
+  <h2>Environmental Program Set Up</h2>
+
+  <p>
+    Programs for managing environmental requirements and compliance must be defined at the location level.
+    <br>
+    To begin, select a location and then those regulatory areas that apply. In the following steps, this wizard will walk you through each set of requirements.
+    Creating your program will require the input of dates and historical activities, so it may take a little time.
+    You will be able to stop and save throughout the setup.
+    Once complete, the Safety Management Suite will help you manage your program.
+  </p>
+
+  <p>
+    Once your first location is complete, you will be able to copy your program from location to location and edit each to save time.
+  </p>
+
+  <div class="form-group">
+    <label for="location">Location <span class="required">*</span></label>
+    <select id="location" [(ngModel)]="selectedLocation">
+      <option value="0" selected>Select</option>
+      <option *ngFor="let loc of locations" [value]="loc.id">{{ loc.name }}</option>
+    </select>
+  </div>
+  <div class="card-grid-header">
+  <div class="start-text">
+    Get started, select a location and Safety Management Suite will aim to track and organize your environmental regulations.
+    Proceed to select the type of waste that applies to the selected location.
+  </div>
+  <div class="program-count">
+    Total Available Programs: <strong>0 of 10 selected</strong>
+  </div>
+</div>
+ <div class="card-grid">
+  <app-card
+    *ngFor="let card of cards"
+    [title]="card.title"
+    [description]="card.description"
+    [imageUrl]="card.imageUrl"
+    [locationSelected]="selectedLocation !== ''">
+  </app-card>
+</div>
+</div>
