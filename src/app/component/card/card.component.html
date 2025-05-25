@@ -1,7 +1,7 @@
 <div class="card-container">
   <img [src]="imageUrl" alt="{{ title }}" class="card-image">
 
-  <div class="overlay">
+  <div class="overlay" *ngIf="!locationSelected">
     SELECT LOCATION IN ORDER TO ADD/VIEW PROGRAM
   </div>
 
