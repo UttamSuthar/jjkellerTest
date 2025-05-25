@@ -142,11 +142,13 @@ export class HomeComponent {
       }
     });
     this.cards = this.allCards;
+    
+    this.selectedCount = this.cards.filter(a => a.selected == true).length;
   }
   onCancelEvent() {
     this.showModal = false;
   }
-  
+
   onDeleteEvent() {
     this.handleAddEditOpertion(this.selectedCard);
     this.showModal = false;
