@@ -9,6 +9,10 @@
   margin: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   height: 260px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-image {
@@ -37,12 +41,27 @@
   padding: 10px;
   background-color: #2a3d66;
   margin-top: 2px;
+  height: 70px;
+  margin-bottom: 50px;
+}
+.card-content-start {
+  
+  background-color: #22c55e;
+  text-align: center;
+  margin-top: -35px;
 }
 
 .card-title {
   margin: 0;
   font-size: 14px;
   font-weight: bold;
+}
+
+
+.card-title-start {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 12px;
 }
 
 .card-description {

@@ -9,8 +9,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
+  @Input() id :number=0;
   @Input() title: string = '';
   @Input() description: string = '';
   @Input() imageUrl: string = '';
   @Input() locationSelected: boolean = false;
+  @Input() mapToLocation:boolean=false;
+  @Input() card:any;
+
 }

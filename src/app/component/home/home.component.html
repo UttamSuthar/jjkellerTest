@@ -3,7 +3,7 @@
     <a href="#">Dashboard</a> / <span>Environmental Programs</span>
   </nav>
 
-  <h2>Environmental Program Set Up uuu</h2>
+  <h2>Environmental Program Set Up</h2>
 
   <p>
     Programs for managing environmental requirements and compliance must be defined at the location level.
@@ -20,7 +20,7 @@
 
   <div class="form-group">
     <label for="location">Location <span class="required">*</span></label>
-    <select id="location" [(ngModel)]="selectedLocation">
+    <select id="location" [(ngModel)]="selectedLocation" (ngModelChange)="onLocationChange($event)">
       <option value="0" selected>Select</option>
       <option *ngFor="let loc of locations" [value]="loc.id">{{ loc.name }}</option>
     </select>
@@ -31,16 +31,22 @@
     Proceed to select the type of waste that applies to the selected location.
   </div>
   <div class="program-count">
-    Total Available Programs: <strong>0 of 10 selected</strong>
+    Total Available Programs: <strong>{{selectedCount}} of 11 selected</strong>
+  </div>
+   <div *ngIf="selectedLocation!='0'" class="">
+    <button>ADD/DELETE PROGRAMS</button>
   </div>
 </div>
  <div class="card-grid">
   <app-card
     *ngFor="let card of cards"
+    [id]="card.id"
     [title]="card.title"
     [description]="card.description"
     [imageUrl]="card.imageUrl"
-    [locationSelected]="selectedLocation !== '0'">
+    [locationSelected]="selectedLocation !== '0'"
+    [mapToLocation]="false"
+    [card]="card">
   </app-card>
 </div>
 </div>
