@@ -146,6 +146,7 @@ export class HomeComponent {
   onCancelEvent() {
     this.showModal = false;
   }
+  
   onDeleteEvent() {
     this.handleAddEditOpertion(this.selectedCard);
     this.showModal = false;
