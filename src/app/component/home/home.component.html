@@ -8,14 +8,16 @@
   <p>
     Programs for managing environmental requirements and compliance must be defined at the location level.
     <br>
-    To begin, select a location and then those regulatory areas that apply. In the following steps, this wizard will walk you through each set of requirements.
+    To begin, select a location and then those regulatory areas that apply. In the following steps, this wizard will
+    walk you through each set of requirements.
     Creating your program will require the input of dates and historical activities, so it may take a little time.
     You will be able to stop and save throughout the setup.
     Once complete, the Safety Management Suite will help you manage your program.
   </p>
 
   <p>
-    Once your first location is complete, you will be able to copy your program from location to location and edit each to save time.
+    Once your first location is complete, you will be able to copy your program from location to location and edit each
+    to save time.
   </p>
 
   <div class="form-group">
@@ -26,27 +28,29 @@
     </select>
   </div>
   <div class="card-grid-header">
-  <div class="start-text">
-    Get started, select a location and Safety Management Suite will aim to track and organize your environmental regulations.
-    Proceed to select the type of waste that applies to the selected location.
+    <div class="start-text">
+      Get started, select a location and Safety Management Suite will aim to track and organize your environmental
+      regulations.
+      Proceed to select the type of waste that applies to the selected location.
+    </div>
+    <div class="program-count">
+      Total Available Programs: <strong>{{selectedCount}} of 11 selected</strong>
+    </div>
+    <br>
+    <div *ngIf="selectedLocation!='0'" style="margin-top:5px">
+      <button *ngIf="!addEditMode" class="link-button" (click)="addEditProgramFunction()">ADD/DELETE PROGRAMS</button>
+      <button *ngIf="addEditMode" class="link-button" (click)="showDashboard()">SHOW DASHBOARD</button>
+    </div>
   </div>
-  <div class="program-count">
-    Total Available Programs: <strong>{{selectedCount}} of 11 selected</strong>
+  <div class="card-grid">
+    <app-card *ngFor="let card of cards" [id]="card.id" [title]="card.title" [description]="card.description"
+      [imageUrl]="card.imageUrl" [locationSelected]="selectedLocation !== '0'" [mapToLocation]="false" [card]="card"
+      [addEditMode]="addEditMode" (addEditFunction)="handleAddEdit($event)">
+    </app-card>
   </div>
-   <div *ngIf="selectedLocation!='0'" class="">
-    <button>ADD/DELETE PROGRAMS</button>
-  </div>
+
 </div>
- <div class="card-grid">
-  <app-card
-    *ngFor="let card of cards"
-    [id]="card.id"
-    [title]="card.title"
-    [description]="card.description"
-    [imageUrl]="card.imageUrl"
-    [locationSelected]="selectedLocation !== '0'"
-    [mapToLocation]="false"
-    [card]="card">
-  </app-card>
-</div>
+<div class="modal-backdrop" *ngIf="showModal">
+  <app-modal [title]="selectedCard.title" (onCancelEvent)="onCancelEvent()"
+    (onDeleteEvent)="onDeleteEvent()"></app-modal>
 </div>

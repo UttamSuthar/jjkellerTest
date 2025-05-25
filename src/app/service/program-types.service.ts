@@ -21,7 +21,7 @@ export class ProgramTypesService {
     id: 2,
     title: 'Spill Prevention, Control & Countermeasure (SPCC)',
     description: 'The SPCC rule focuses on oil spill prevention, requiring facilities to have plans in place to prevent and contain oil discharges into navigable waters.',
-    imageUrl: 'assets/images/tempImage.jpeg',
+    imageUrl: 'assets/images/tree.jpeg',
     selected: false
   },
   {

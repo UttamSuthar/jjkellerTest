@@ -31,7 +31,7 @@
   color: white;
   font-size: 11px;
   font-weight: bold;
-  padding: 8px;
+  padding: 1px;
   text-align: center;
   border-radius: 5px;
   z-index: 2;
@@ -68,4 +68,17 @@
   margin-top: 5px;
   font-size: 12px;
   line-height: 1.4;
+}
+
+
+.image-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.image-button img {
+  width: 24px; /* or adjust as needed */
+  height: auto;
 }
